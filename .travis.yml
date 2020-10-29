@@ -1,3 +1,4 @@
+language: generic 
 sudo: required
 services:
   - docker
@@ -5,7 +6,7 @@ services:
 before_install:
   - docker build -t krabidzus/docker-react -f Dockerfile.dev .
 
-  script:
-    - docker run -e CI=true krabidzus/docker-react npm run test
+script:
+  - docker run -e CI=true krabidzus/docker-react npm run test
 
 
